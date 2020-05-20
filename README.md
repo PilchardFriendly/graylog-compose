@@ -1,4 +1,4 @@
-# Graylog2 in docker-compose
+# Graylog3 in docker-compose
 This `docker-compose.yml` runs all the required processes for a Graylog setup on multiple docker containers.
 
 The following processes are run in their own docker containers
@@ -18,7 +18,7 @@ docker-compose up
 ```
 
 ## Play
-Open [https://localhost:9443/](https://localhost:9443/) and use the login. (It may take a minute for the graylog server to come online)
+Open [http://localhost:9000/](http://localhost:9000/) and use the login. (It may take a minute for the graylog server to come online)
 
 ```
 username: admin

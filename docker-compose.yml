@@ -30,11 +30,11 @@ services:
       - "./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro"
       - "./elasticsearch/logging.yml:/usr/share/elasticsearch/config/logging.yml:ro"
     environment:
-      - http.host=0.0.0.0
-      - http.port=9201
-      - transport.host=localhost
-      - network.host=0.0.0.0
-      - ES_JAVA_OPTS:"-Xms512m -Xmx512m"
+      http.host: 0.0.0.0
+      http.port: 9201
+      transport.host: localhost
+      network.host: 0.0.0.0
+      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
     ports:
       - "9201:9201"
       - "9300:9300"
@@ -56,7 +56,9 @@ services:
     environment:
       GRAYLOG_PASSWORD_SECRET: Bgw7mYROifuwMCojIcuQ0PYCiuwtOWNSIQBV6fbIfNIzpFFxKrVcRDOxJOPBmjHPhOA5uT928Ll9LlfpPEWxsy9a4VSgZebo
       GRAYLOG_ROOT_PASSWORD_SHA2: 5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8
+      # GRAYLOG_WEB_ENDPOINT_URI: http://127.0.0.1:9000/api
       GRAYLOG_HTTP_EXTERNAL_URI: http://127.0.0.1:9000/
+      # GRAYLOG_MONGODB_URI: mongodb://mongodb.service/graylog
       GRAYLOG_MONGODB_MAX_CONNECTIONS: 100
       GRAYLOG_MONGODB_THREADS_ALLOWED_TO_BLOCK_MULTIPLIER: 5
       GRAYLOG_ELASTICSEARCH_CLUSTER_NAME: graylog
